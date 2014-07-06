@@ -282,7 +282,7 @@ fn get_method_attr_value(cx: &mut ExtCtxt,
                 LitStr(ref s, _) => {
                     let method_attr = s.get();
                     if is_method_attribute_valid(method_attr) {
-                        insert_method(cx, item, method_attr.to_string());
+                        insert_method(cx, item, method_attr.to_string().into_ascii_upper());
                     } else {
                         cx.span_err(sp, "this method attribut don't exist. Here is a list of \
                             available attribute: [GET, POST]")

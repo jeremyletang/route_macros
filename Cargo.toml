@@ -6,3 +6,6 @@ authors = ["letang.jeremy@gmail.com"]
 [[lib]]
 name = "route_macros"
 crate_type = ["rlib", "dylib"]
+
+[[bin]]
+name = "routes"
