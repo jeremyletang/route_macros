@@ -1,0 +1,8 @@
+[package]
+name = "route_macros"
+version = "0.0.1"
+authors = ["letang.jeremy@gmail.com"]
+
+[[lib]]
+name = "route_macros"
+crate-type = ["rlib", "dylib"]
