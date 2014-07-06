@@ -28,8 +28,8 @@
 #![crate_type = "rlib"]
 #![crate_type = "dylib"]
 #![experimental]
-#![allow(missing_doc, unused_variable)]
-#![feature(plugin_registrar, managed_boxes, quote, phase)]
+#![allow(missing_doc)]
+#![feature(plugin_registrar, quote, phase)]
 
 #[phase(plugin, link)]
 extern crate regex_macros;
@@ -45,11 +45,8 @@ use std::ascii::OwnedStrAsciiExt;
 use rustc::plugin::registry::Registry;
 
 use syntax::ast;
-use syntax::ast::Path;
 use syntax::parse::token;
-use syntax::ast::ExprPath;
 use syntax::codemap::Span;
-use syntax::ast::PathSegment;
 use syntax::owned_slice::OwnedSlice;
 use syntax::ast::{Ident,
                   TokenTree,
@@ -59,7 +56,10 @@ use syntax::ast::{Ident,
                   MetaNameValue,
                   LitStr,
                   Item,
-                  ItemFn};
+                  ItemFn,
+                  Path,
+                  ExprPath,
+                  PathSegment};
 use syntax::ext::base::{ExtCtxt,
                         MacResult,
                         ItemModifier,
