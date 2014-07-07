@@ -100,8 +100,7 @@ fn expand_get_routes(cx: &mut ExtCtxt, sp: Span, _: &[TokenTree]) -> Box<MacResu
         quote_expr!(&*cx, ($func_path, $route, $method, $vars.to_owned(), $match_reg))
     }).collect();
     let v = create_vec_expr(v, sp);
-    // MacExpr::new(quote_expr!(cx, Vec::from_slice($v.to_owned())))
-    MacExpr::new(quote_expr!(cx, $v.to_owned()))
+    MacExpr::new(quote_expr!(cx, $v))
 }
 
 fn remove_trailling_slash(route: &str) -> String {
